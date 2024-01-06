@@ -1,0 +1,17 @@
+{
+  "name": "tryout-node-js-persona-genator",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/Exulenood/tryout-node-js-persona-genator.git",
+  "author": "Exulenood",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "startServer": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
