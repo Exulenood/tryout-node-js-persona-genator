@@ -6,7 +6,8 @@
   "author": "Exulenood",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "openai": "^4.0.0"
   },
   "scripts": {
     "startServer": "nodemon server.js"
