@@ -1,5 +1,5 @@
 import express from 'express';
-import { oaiTest } from './testOaiRequests';
+import { oaiTest } from './api-oai';
 
 const app = express();
 const SERVER_URL = 'http://localhost';
@@ -9,13 +9,14 @@ app.listen(PORT, () => {
   console.log(`Server is running on ${SERVER_URL}:${PORT}`);
 });
 
-app.get('/', (req, res) => {
-  res.send('Persona Generator Server is running');
+app.get('/test-oai-response', async (req, res) => {
+  try {
+    const prompt = req.query.prompt || 'add Testprompt here';
+    const response = await oaiTest(prompt.toString());
+    res.json(response);
+  }
+  catch {
+    res.status(500).send('Error - could not execute test-oai-response')
+  }
 });
 
-async function testResponse(prompt: string) {
-  const res = await oaiTest(prompt);
-  console.log(res);
-}
-
-testResponse('add Testprompt here');
